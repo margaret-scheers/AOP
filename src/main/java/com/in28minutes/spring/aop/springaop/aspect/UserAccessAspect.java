@@ -20,7 +20,7 @@ public class UserAccessAspect {
     //terms  we are weaving and the framework is a weaver
 
     //specifying the classes to check is a pointcut
-    @Before("execution(* com.in28minutes.spring.aop.springaop..*.*(..))")
+    @Before("execution(* com.in28minutes.spring.aop.springaop.CommonJoinPointConfig.businessLayerExecution())")
     public void before(JoinPoint joinPoint) {
         //you do not need to check access in every class, you can
         // do it here
