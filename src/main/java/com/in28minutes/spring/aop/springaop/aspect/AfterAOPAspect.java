@@ -23,7 +23,7 @@ public class AfterAOPAspect {
             value ="execution(* com.in28minutes.spring.aop.springaop.business.*.*(..))",
             throwing="exception"
     )
-    public void afterThrowing(JoinPoint joinPoint, Object exception) {
+    public void afterThrowing(JoinPoint joinPoint, Throwable exception) {
         logger.info(" {} returned with value {}", joinPoint, exception);
     }
 
