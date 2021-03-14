@@ -9,11 +9,11 @@ import org.springframework.context.annotation.Configuration;
 
 @Aspect
 @Configuration
-public class MethodExcecutionCalculationAspect {
+public class MethodExecutionCalculationAspect {
     private Logger logger= LoggerFactory.getLogger(this.getClass());
 
 
-    @Around("execution(* com.in28minutes.spring.aop.springaop.CommonJoinPointConfig.businessLayerExecution())")
+    @Around("com.in28minutes.spring.aop.springaop.CommonJoinPointConfig.businessLayerExecution())")
     public void afterThrowing(ProceedingJoinPoint joinPoint) throws Throwable {
         //startTime = x
         long startTime = System.currentTimeMillis();

@@ -12,7 +12,7 @@ public class AfterAOPAspect {
     private Logger logger= LoggerFactory.getLogger(this.getClass());
 
     @AfterReturning(
-            value ="execution(* com.in28minutes.spring.aop.springaop.business.*.*(..))",
+            value ="com.in28minutes.spring.aop.springaop.CommonJoinPointConfig.businessLayerExecution())",
             returning="result"
     )
     public void after(JoinPoint joinPoint, Object result) {
@@ -20,14 +20,14 @@ public class AfterAOPAspect {
     }
 
     @AfterThrowing(
-            value ="execution(* com.in28minutes.spring.aop.springaop.business.*.*(..))",
+            value ="com.in28minutes.spring.aop.springaop.CommonJoinPointConfig.businessLayerExecution()",
             throwing="exception"
     )
     public void afterThrowing(JoinPoint joinPoint, Throwable exception) {
         logger.info(" {} returned with value {}", joinPoint, exception);
     }
 
-    @After("execution(* com.in28minutes.spring.aop.springaop.business.*.*(..))")
+    @After("com.in28minutes.spring.aop.springaop.CommonJoinPointConfig.businessLayerExecution()")
     public void afterThrowing(JoinPoint joinPoint) {
         logger.info(" {} after", joinPoint);
     }
